@@ -9,6 +9,7 @@ type Size struct {
 // Conversion obj ...
 type Conversion struct {
 	InsideDiameterInches int
+	InsideCircumInches   int
 	InsideDiameterMillis int
 	InsideCircumMillis   int
 	SizeUSA              int
