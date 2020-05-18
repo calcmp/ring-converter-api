@@ -1,6 +1,6 @@
 package main
 
-// britishMap ...
+// BritishMap ...
 var BritishMap = map[int]string{
 	1:  "-",
 	2:  "-",

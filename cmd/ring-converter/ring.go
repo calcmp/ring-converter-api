@@ -1,8 +1,8 @@
 package main
 
-// InputPos obj ...
-type InputPos struct {
-	Position int `json:"input"`
+// Input obj ...
+type Input struct {
+	Input string `json:"input"`
 }
 
 // Conversion obj ...
@@ -17,4 +17,9 @@ type Conversion struct {
 	SizeGerman           string
 	SizeJapanese         string
 	SizeSwiss            string
+}
+
+// SizeMap obj ...
+type SizeMap struct {
+	size string
 }
