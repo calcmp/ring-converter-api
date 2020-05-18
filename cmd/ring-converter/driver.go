@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"ring-converter/maps"
 	"strconv"
 )
 
@@ -14,16 +15,16 @@ func convertSizes(input string) *Conversion {
 	}
 
 	newConversion := &Conversion{
-		InsideDiameterInches: InsideDiameterInches[pos],
-		InsideDiameterMillis: InsideDiameterMillis[pos],
-		InsideCircumInches:   CircumferenceInch[pos],
-		InsideCircumMillis:   CircumferenceMillis[pos],
-		SizeBritish:          BritishMap[pos],
-		SizeUSA:              UsaMap[pos],
-		SizeFrench:           FrenchMap[pos],
-		SizeGerman:           GermanMap[pos],
-		SizeJapanese:         JapaneseMap[pos],
-		SizeSwiss:            SwissMap[pos],
+		InsideDiameterInches: maps.InsideDiameterInches[pos],
+		InsideDiameterMillis: maps.InsideDiameterMillis[pos],
+		InsideCircumInches:   maps.CircumferenceInch[pos],
+		InsideCircumMillis:   maps.CircumferenceMillis[pos],
+		SizeBritish:          maps.BritishMap[pos],
+		SizeUSA:              maps.UsaMap[pos],
+		SizeFrench:           maps.FrenchMap[pos],
+		SizeGerman:           maps.GermanMap[pos],
+		SizeJapanese:         maps.JapaneseMap[pos],
+		SizeSwiss:            maps.SwissMap[pos],
 	}
 	return newConversion
 }
@@ -33,25 +34,25 @@ func returnMap(input string) string {
 
 	switch input {
 	case "British":
-		mapToSend = BritishMap
+		mapToSend = maps.BritishMap
 	case "French":
-		mapToSend = FrenchMap
+		mapToSend = maps.FrenchMap
 	case "German":
-		mapToSend = GermanMap
+		mapToSend = maps.GermanMap
 	case "Japanese":
-		mapToSend = JapaneseMap
+		mapToSend = maps.JapaneseMap
 	case "Swiss":
-		mapToSend = SwissMap
+		mapToSend = maps.SwissMap
 	case "USA":
-		mapToSend = UsaMap
+		mapToSend = maps.UsaMap
 	case "Diameter (inch)":
-		mapToSend = InsideDiameterInches
+		mapToSend = maps.InsideDiameterInches
 	case "Diameter (mm)":
-		mapToSend = InsideDiameterMillis
+		mapToSend = maps.InsideDiameterMillis
 	case "Circumference (inch)":
-		mapToSend = CircumferenceInch
+		mapToSend = maps.CircumferenceInch
 	case "Circumference (mm)":
-		mapToSend = CircumferenceMillis
+		mapToSend = maps.CircumferenceMillis
 	}
 
 	data, err := json.Marshal(mapToSend)

@@ -19,7 +19,6 @@ func getMap(w http.ResponseWriter, r *http.Request) {
 }
 
 func getInput(w http.ResponseWriter, r *http.Request) Input {
-	log.Println("Get Input: Hit")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
 
