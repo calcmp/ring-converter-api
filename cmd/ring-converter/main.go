@@ -9,33 +9,12 @@ import (
 )
 
 func getConversion(w http.ResponseWriter, r *http.Request) {
-	log.Println("Get Conversion: Hit")
-
 	input := getInput(w, r)
-
-	log.Println(convertSizes(input.Input))
-
 	json.NewEncoder(w).Encode(convertSizes(input.Input))
 }
 
 func getMap(w http.ResponseWriter, r *http.Request) {
-	log.Println("Get Conversion: Hit")
-
 	input := getInput(w, r)
-
-	log.Println(returnMap(input.Input))
-
-	/*data, err := json.Marshal(returnMap(input.Input))
-	if err != nil {
-		fmt.Println(err.Error())
-		return
-	}
-
-	fmt.Println(data)
-
-	jsonStr := string(data)
-	fmt.Println(jsonStr)*/
-
 	json.NewEncoder(w).Encode(returnMap(input.Input))
 }
 

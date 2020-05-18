@@ -8,11 +8,11 @@ import (
 )
 
 func convertSizes(input string) *Conversion {
-	log.Println(input)
 	pos, err := strconv.Atoi(input)
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	newConversion := &Conversion{
 		InsideDiameterInches: InsideDiameterInches[pos],
 		InsideDiameterMillis: InsideDiameterMillis[pos],
@@ -44,13 +44,13 @@ func returnMap(input string) string {
 		mapToSend = SwissMap
 	case "USA":
 		mapToSend = UsaMap
-	case "DiamInch":
+	case "Diameter (inch)":
 		mapToSend = InsideDiameterInches
-	case "DiamMM":
+	case "Diameter (mm)":
 		mapToSend = InsideDiameterMillis
-	case "CircInch":
+	case "Circumference (inch)":
 		mapToSend = CircumferenceInch
-	case "CircMM":
+	case "Circumference (mm)":
 		mapToSend = CircumferenceMillis
 	}
 
@@ -58,7 +58,6 @@ func returnMap(input string) string {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-
 	jsonStr := string(data)
 
 	return jsonStr
