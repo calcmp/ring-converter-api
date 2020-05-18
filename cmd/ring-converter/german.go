@@ -1,6 +1,6 @@
 package main
 
-var germanMap = map[int]string{
+var GermanMap = map[int]string{
 	1:  "-",
 	2:  "-",
 	3:  "-",

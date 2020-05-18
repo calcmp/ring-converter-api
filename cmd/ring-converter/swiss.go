@@ -1,6 +1,6 @@
 package main
 
-var swissMap = map[int]string{
+var SwissMap = map[int]string{
 	1:  "-",
 	2:  "-",
 	3:  "-",

@@ -1,7 +1,7 @@
 package main
 
 // britishMap ...
-var britishMap = map[int]string{
+var BritishMap = map[int]string{
 	1:  "-",
 	2:  "-",
 	3:  "-",

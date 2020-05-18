@@ -10,6 +10,7 @@ import (
 
 func getConversion(w http.ResponseWriter, r *http.Request) {
 	log.Println("Get Conversion: Hit")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "application/json")
 
 	var pos InputPos
@@ -21,7 +22,6 @@ func getConversion(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	log.Println(convertSizes(pos.Position))
 	json.NewEncoder(w).Encode(convertSizes(pos.Position))
 }
 
@@ -30,6 +30,6 @@ func main() {
 	router := mux.NewRouter()
 
 	// Handle requests
-	router.HandleFunc("/api/convert", getConversion)
+	router.HandleFunc("/api/convert", getConversion).Methods("POST", "OPTIONS")
 	log.Fatal(http.ListenAndServe(":8081", router))
 }

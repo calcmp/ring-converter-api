@@ -1,7 +1,7 @@
 package main
 
 // usaMap ...
-var usaMap = map[int]string{
+var UsaMap = map[int]string{
 	1:  "0000",
 	2:  "00",
 	3:  "0",

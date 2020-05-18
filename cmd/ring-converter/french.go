@@ -1,7 +1,7 @@
 package main
 
 // frenchMap ...
-var frenchMap = map[int]string{
+var FrenchMap = map[int]string{
 	1:  "-",
 	2:  "-",
 	3:  "-",

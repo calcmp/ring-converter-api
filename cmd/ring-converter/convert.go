@@ -1,19 +1,17 @@
 package main
 
-func convertSizes(step int) Conversion {
-	var newConversion Conversion
-
-	newConversion.InsideDiameterInches = InsideDiameterInches[step]
-	newConversion.InsideDiameterMillis = InsideDiameterMillis[step]
-	newConversion.InsideCircumInches = CircumferenceInch[step]
-	newConversion.InsideCircumMillis = CircumferenceMillis[step]
-
-	newConversion.SizeBritish = britishMap[step]
-	newConversion.SizeUSA = usaMap[step]
-	newConversion.SizeFrench = frenchMap[step]
-	newConversion.SizeGerman = germanMap[step]
-	newConversion.SizeJapanese = japaneseMap[step]
-	newConversion.SizeSwiss = swissMap[step]
-
+func convertSizes(step int) *Conversion {
+	newConversion := &Conversion{
+		InsideDiameterInches: InsideDiameterInches[step],
+		InsideDiameterMillis: InsideDiameterMillis[step],
+		InsideCircumInches:   CircumferenceInch[step],
+		InsideCircumMillis:   CircumferenceMillis[step],
+		SizeBritish:          BritishMap[step],
+		SizeUSA:              UsaMap[step],
+		SizeFrench:           FrenchMap[step],
+		SizeGerman:           GermanMap[step],
+		SizeJapanese:         JapaneseMap[step],
+		SizeSwiss:            SwissMap[step],
+	}
 	return newConversion
 }

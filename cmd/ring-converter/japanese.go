@@ -1,6 +1,6 @@
 package main
 
-var japaneseMap = map[int]string{
+var JapaneseMap = map[int]string{
 	1:  "-",
 	2:  "-",
 	3:  "-",
